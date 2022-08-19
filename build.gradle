@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.19'
+    }
+}
+plugins {
+    id "com.google.protobuf" version "0.8.19"
+    id "java"
+    id "idea" // required for protobuf support in intellij
+}
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
+
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    implementation 'org.apache.kafka:kafka-streams:3.2.1'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.21.5'
+    implementation group: 'io.confluent', name: 'kafka-streams-protobuf-serde', version: '7.2.1'
+
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = "com.google.protobuf:protoc:3.21.2"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = "com.google.protobuf:protoc:3.21.2"
+    }
+}
