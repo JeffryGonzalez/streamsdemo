@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_outer_classname = "HypertheoryDocumentsUserKey";
+option csharp_namespace = "Hypertheory.Documents";
+
+message UserKey {
+  string id = 1;
+}
+

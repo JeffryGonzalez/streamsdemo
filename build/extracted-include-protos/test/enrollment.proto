@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_outer_classname = "HypertheoryEvents";
+option java_outer_classname = "HypertheoryDocumentsEnrollment";
 
 option csharp_namespace = "Hypertheory.Documents";
 import "google/protobuf/timestamp.proto";
